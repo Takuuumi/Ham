@@ -1,0 +1,58 @@
+@charset "utf-8";
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+a {
+    text-emphasis: none;
+}
+
+.menuB {
+    display: block;
+    height: 80px;
+    width: 80px;
+    position: fixed;
+    background-color: green;
+    top: 0;
+    right: 0;
+}
+
+.menuB div {
+    height: 1px;
+    width: 60%;
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s;
+}
+.menuB div:nth-of-type(1) {
+    transform: translate(-50%, -15px);
+}
+.menuB div:nth-of-type(3) {
+    transform: translate(-50%, 15px);
+}
+.menuB.active div:nth-of-type(1) {
+    transform: rotate(45deg)  translate(-50%, 0);
+    transform-origin: 0% 50%;
+}
+.menuB.active div:nth-of-type(2) {
+    opacity: 0;
+}
+.menuB.active div:nth-of-type(3) {
+    transform: rotate(-45deg) translate(-50%, 0);
+    transform-origin: 0% 50%;
+}
+
+nav {
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+}
+
+nav.active {
+    opacity: 1;
+    visibility: visible;
+}
